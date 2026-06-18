@@ -1,5 +1,5 @@
 {
-  "name": "yiovo/tp6-captcha",
+  "name": "toproplus/tp6-captcha",
   "description": "tp6-captcha",
   "license": "Apache-2.0",
   "authors": [
@@ -15,7 +15,7 @@
     "topthink/framework": "^6.0.0|^8.0",
     "yiovo/tp6-cache": "^1.0"
   },
-  "homepage": "https://github.com/yiovo/tp6-captcha",
+  "homepage": "https://github.com/toproplus/tp6-captcha",
   "autoload": {
     "psr-4": {
       "yiovo\\captcha\\": "src/"

@@ -288,14 +288,14 @@ class CaptchaApi
         $px = $py = 0;
 
         // 曲线前部分
-        $A = mt_rand(1, $this->imageH / 2); // 振幅
-        $b = mt_rand(-$this->imageH / 4, $this->imageH / 4); // Y轴方向偏移量
-        $f = mt_rand(-$this->imageH / 4, $this->imageH / 4); // X轴方向偏移量
-        $T = mt_rand($this->imageH, $this->imageW * 2); // 周期
+        $A = mt_rand(1, ceil($this->imageH / 2)); // 振幅
+        $b = mt_rand(-floor($this->imageH / 4), ceil($this->imageH / 4)); // Y轴方向偏移量
+        $f = mt_rand(-floor($this->imageH / 4), ceil($this->imageH / 4)); // X轴方向偏移量
+        $T = mt_rand($this->imageH, ceil($this->imageW * 2)); // 周期
         $w = (2 * M_PI) / $T;
 
         $px1 = 0; // 曲线横坐标起始位置
-        $px2 = mt_rand($this->imageW / 2, $this->imageW * 0.8); // 曲线横坐标结束位置
+        $px2 = mt_rand(floor($this->imageW / 2), ceil($this->imageW * 0.8)); // 曲线横坐标结束位置
 
         for ($px = $px1; $px <= $px2; $px = $px + 1) {
             if (0 != $w) {
@@ -309,9 +309,9 @@ class CaptchaApi
         }
 
         // 曲线后部分
-        $A = mt_rand(1, $this->imageH / 2); // 振幅
-        $f = mt_rand(-$this->imageH / 4, $this->imageH / 4); // X轴方向偏移量
-        $T = mt_rand($this->imageH, $this->imageW * 2); // 周期
+        $A = mt_rand(1, ceil($this->imageH / 2)); // 振幅
+        $f = mt_rand(-floor($this->imageH / 4), ceil($this->imageH / 4)); // X轴方向偏移量
+        $T = mt_rand($this->imageH, ceil($this->imageW * 2)); // 周期
         $w = (2 * M_PI) / $T;
         $b = $py - $A * sin($w * $px + $f) - $this->imageH / 2;
         $px1 = $px2;
